@@ -1,7 +1,7 @@
 import speech_recognition as sr
-import pyttsx3     #text to speech
+import pyttsx3     
 
-# Initialize recognizer and text-to-speech engine
+
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
 
@@ -10,13 +10,13 @@ def speak(text):
     engine.runAndWait()
 
 def processCommand(command):
-    # Add your command processing logic here
+    
     pass    
 
 if __name__ == "__main__":
     speak("Initializing Buddy....")
     while True:
-        # Listen for the wake word "Buddy"
+        
         print("Recognizing...")
         try:
             with sr.Microphone() as source:
@@ -34,3 +34,4 @@ if __name__ == "__main__":
         
         except Exception as e:
             print("Error: {0}".format(e)) 
+
