@@ -1,6 +1,6 @@
 import speech_recognition as sr
 import webbrowser
-import pyttsx3     #text to speech
+import pyttsx3     
 import musicLibrary     
 import requests
 import os
@@ -37,14 +37,14 @@ def processCommand(c):
             data = r.json()
             articles = data.get('articles', [])
             
-            # Extract and print all the titles
+            
             titles = [article['title'] for article in articles if 'title' in article]
             for title in titles:
                 speak(title)
 
              
     else:
-         #let open ai handle th request
+         
          pass
                   
 
@@ -52,8 +52,7 @@ def processCommand(c):
 if __name__ == "__main__":
     speak("intializing jarvis....")
     while True:
-    #Listen for the wake word "jarvis"
-    #obtain audio from the microphone
+    
          r= sr.Recognizer()
 
 
@@ -73,4 +72,5 @@ if __name__ == "__main__":
                       processCommand(command)
     
          except Exception as e:
+
             print("Error; {0}".format(e))
